@@ -8,6 +8,7 @@
  */
 
 ?>
+abc
 <a class="gotop" href="#page"><i class="fa fa-chevron-up"></i></a>
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 <div class="bg-dark" id="wrapper-footer">

@@ -73,3 +73,36 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 }
+
+/**
+ * Get nav menu items by location
+ *
+ * @param $location The menu location id
+ */
+
+function get_nav_menu_items_by_location( $location, $args = [] ) {
+ 
+  // Get all locations
+  $locations = get_nav_menu_locations();
+
+  // Get object id by location
+  $object = wp_get_nav_menu_object( $locations[$location] );
+
+  // Get menu items by menu name
+  $menu_items = wp_get_nav_menu_items( $object->name, $args );
+
+  // Return menu post objects
+  return $menu_items;
+}
+
+function get_my_menu() {
+  // Replace your menu name, slug or ID carefully
+  return get_nav_menu_items_by_location('primary');
+}
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'wp/v2', 'menu', array(
+      'methods' => 'GET',
+      'callback' => 'get_my_menu',
+  ) );
+} );

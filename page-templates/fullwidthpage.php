@@ -9,25 +9,33 @@
 
 get_header();
 ?>
+ádsfdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+<div id='root'></div>
 
-<div class="<?php if (!is_home()&&!is_front_page()) {echo'wrapper'; }else {echo 'home-wrapper mb-4';}?>" id="full-width-page-wrapper">
+<script type='text/babel'>
+	alert("dmm");
+	const Link = ReactRouterDOM.Link;
+	const Route = ReactRouterDOM.Route;
 
-	<div class="container" id="content">
-			<div class="content-area" id="primary">
+	const App = () => (
+		<ReactRouterDOM.HashRouter>
+			<ul>
+				<li><Link to="/">Home</Link></li>
+				<li><Link to="/login">Login</Link></li>
+				<li><Link to="/register">Register</Link></li>
+			</ul>
 
-				<main class="site-main" id="main" role="main">
+			<Route path="/" exact component={Home} />
+			<Route path="/login" component={Login} />
+			<Route path="/register" component={Register} />
+		</ReactRouterDOM.HashRouter>
+	)
 
-					<?php while ( have_posts() ) : the_post(); ?>
+	const Home = () => <h1>Home</h1>
+	const Login = () => <h1>Login</h1>
+	const Register = () => <h1>Register</h1>
 
-						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
-					<?php endwhile; // end of the loop. ?>
-
-				</main><!-- #main -->
-
-			</div><!-- #primary -->
-
-	</div><!-- Container end -->
-
-</div><!-- Wrapper end -->
+	ReactDOM.render(<App />, document.querySelector('#root'));
+</script>
 
 <?php get_footer(); ?>

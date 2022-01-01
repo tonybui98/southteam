@@ -52,12 +52,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-9 col-3 d-flex">
+                                kkkkkkkkkk
                                 <div class="primery-menu">
-                                    <div class="logo d-lg-none">
-                                        <a rel="home" href="<?php echo home_url();?>" title="<?php echo bloginfo('title'); ?>">
-                                            <img src="<?php the_field('logo', 'option'); ?>" width="125">
-                                        </a>
-                                    </div>
                                 <?php
                                     wp_nav_menu( array(
                                         'theme_location' => 'primary',

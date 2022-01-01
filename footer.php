@@ -31,17 +31,8 @@ abc
 </div><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
-<a href="tel:<?php the_field('hotline', 'option'); ?>" class="hotline-mobi" rel="nofollow">
-  <div class="website-alo-phone">
-	  <div class="quydinh-tip quydinh-tip-2 d-none d-lg-inline-block"><?php the_field('hotline', 'option'); ?></div>
-  <div class="animated infinite zoomIn website-alo-ph-circle"></div>
-  <div class="animated infinite pulse website-alo-ph-circle-fill"></div>
-  <div class="animated infinite tada website-alo-ph-img-circle"><i class="fa fa-phone-alt" aria-hidden="true"></i></div>
-  </div>
-  </a>
 <?php wp_footer(); ?>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=299718793875091&autoLogAppEvents=1" nonce="gS83YewN"></script>
 <div class="panel-overlay"></div>
 </body>
 </html>
